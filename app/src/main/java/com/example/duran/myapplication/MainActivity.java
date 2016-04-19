@@ -9,6 +9,8 @@ import android.widget.*;
 import android.view.*;
 import android.app.*;
 
+import java.text.DecimalFormat;
+
 import static android.widget.Toast.*;
 
 public class MainActivity extends AppCompatActivity {
@@ -32,11 +34,14 @@ public class MainActivity extends AppCompatActivity {
    public void  acao(View view){
     edAltura = (EditText)findViewById(R.id.edAltura);
     edPeso   = (EditText)findViewById(R.id.edPeso);
-      altura = Double.parseDouble(edAltura.getText().toString());
-//        teste = edAltura.getText().toString();
+    altura = Double.parseDouble(edAltura.getText().toString());
+//  teste = edAltura.getText().toString();
      peso   = Double.parseDouble(edPeso.getText().toString());
        Calcula calcula = new Calcula();
       resultado = calcula.IMC(altura ,peso);
-       Toast.makeText(getApplicationContext(), String.valueOf(resultado), Toast.LENGTH_SHORT).show();
+      Utilidades util = new Utilidades();
+      teste =  util.formatarDoubleDuasCasas(resultado);
+      Toast.makeText(getApplicationContext(),"Seu imc é: "+ teste, Toast.LENGTH_SHORT).show();
+       Toast.makeText(getApplicationContext(),calcula.classificaIMC(resultado),Toast.LENGTH_LONG).show();
     }
 }
