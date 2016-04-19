@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 //        teste = edAltura.getText().toString();
      peso   = Double.parseDouble(edPeso.getText().toString());
        Calcula calcula = new Calcula();
-      resultado = calcula.IMC(peso ,altura);
+      resultado = calcula.IMC(altura ,peso);
        Toast.makeText(getApplicationContext(), String.valueOf(resultado), Toast.LENGTH_SHORT).show();
     }
 }
