@@ -26,13 +26,17 @@ public class MainActivity extends AppCompatActivity {
     double peso = 0;
     double resultado = 0;
     String teste = "";
-   public void  acao(View view){
 
-//       altura = Double.parseDouble(edAltura.getText().toString());
-teste = edAltura.getText().toString();
-//   peso   = Double.parseDouble(edPeso.getText().toString());
-     //  Calcula calcula = new Calcula();
-      // resultado = calcula.IMC(peso ,altura);
+
+
+   public void  acao(View view){
+    edAltura = (EditText)findViewById(R.id.edAltura);
+    edPeso   = (EditText)findViewById(R.id.edPeso);
+      altura = Double.parseDouble(edAltura.getText().toString());
+//        teste = edAltura.getText().toString();
+     peso   = Double.parseDouble(edPeso.getText().toString());
+       Calcula calcula = new Calcula();
+      resultado = calcula.IMC(peso ,altura);
        Toast.makeText(getApplicationContext(), String.valueOf(resultado), Toast.LENGTH_SHORT).show();
     }
 }
