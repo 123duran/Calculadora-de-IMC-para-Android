@@ -1,5 +1,6 @@
 package com.example.duran.myapplication;
 
+import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -32,16 +33,30 @@ public class MainActivity extends AppCompatActivity {
 
 
    public void  acao(View view){
-    edAltura = (EditText)findViewById(R.id.edAltura);
-    edPeso   = (EditText)findViewById(R.id.edPeso);
-    altura = Double.parseDouble(edAltura.getText().toString());
-//  teste = edAltura.getText().toString();
-     peso   = Double.parseDouble(edPeso.getText().toString());
-       Calcula calcula = new Calcula();
-      resultado = calcula.IMC(altura ,peso);
-      Utilidades util = new Utilidades();
-      teste =  util.formatarDoubleDuasCasas(resultado);
-      Toast.makeText(getApplicationContext(),"Seu imc é: "+ teste, Toast.LENGTH_SHORT).show();
-       Toast.makeText(getApplicationContext(),calcula.classificaIMC(resultado),Toast.LENGTH_LONG).show();
+        edAltura = (EditText)findViewById(R.id.edAltura);
+        edPeso   = (EditText)findViewById(R.id.edPeso);
+        altura = Double.parseDouble(edAltura.getText().toString());
+        //  teste = edAltura.getText().toString();
+        peso   = Double.parseDouble(edPeso.getText().toString());
+        Calcula calcula = new Calcula();
+        resultado = calcula.IMC(altura,peso);
+        Utilidades util = new Utilidades();
+        teste  =  util.formatarDoubleDuasCasas(resultado);
+        Toast.makeText(getApplicationContext(),"Seu imc é: "+ teste, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(),calcula.classificaIMC(resultado),Toast.LENGTH_LONG).show();
+    }
+
+    public void mostrarSobre(View view){
+
+        AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+        alertDialog.setTitle(R.string.app_name);
+        alertDialog.setMessage("Feito por: Bruno Duran ");
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+        alertDialog.show();
     }
 }

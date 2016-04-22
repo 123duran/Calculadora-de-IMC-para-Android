@@ -7,6 +7,7 @@ import java.text.DecimalFormat;
  */
 public class Utilidades {
 
+
         DecimalFormat df = new DecimalFormat("#.##");
 
     public String formatarDoubleDuasCasas(double value){

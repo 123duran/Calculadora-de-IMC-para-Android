@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Calculadora de IMC vs 1.03</string>
+    <string name="app_name">Calculadora de IMC vs 1.04</string>
+    <string name="btnAbout">Sobre</string>
 </resources>

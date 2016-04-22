@@ -7,7 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.duran.myapplication.MainActivity">
+    tools:context="com.example.duran.myapplication.MainActivity"
+    style="@style/Base.Theme.AppCompat.Light.DarkActionBar">
 
     <TextView
         android:layout_width="wrap_content"
@@ -21,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Peso"
+        android:text="Peso (kg)"
         android:id="@+id/textView"
         android:layout_marginTop="40dp"
         android:layout_below="@+id/textView2"
@@ -40,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Altura"
+        android:text="Altura (m)"
         android:id="@+id/textView3"
         android:layout_marginTop="48dp"
         android:layout_below="@+id/textView"
@@ -66,4 +67,15 @@
         android:layout_centerHorizontal="true"
         android:onClick="acao"
         />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnAbout"
+        android:id="@+id/btnAbout"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="mostrarSobre"/>
+
 </RelativeLayout>
